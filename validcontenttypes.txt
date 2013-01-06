@@ -1,0 +1,5 @@
+THIS LINE IS IGNORED
+image/png
+image/jpeg
+image/gif
+application/pdf
