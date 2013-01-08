@@ -7,7 +7,7 @@ $here = dirname($_SERVER['PHP_SELF']);
 
 #content-type filter section:
 $match=0;
-if (urldecode($_REQUEST["fltr"]) != "")
+if (isset($_REQUEST["fltr"]))
 	{
 	$fltrmode = urldecode($_REQUEST["fltr"]);
 	if ($fltrmode == "1" && (urldecode($_REQUEST["cntntyp"]) != ""))
@@ -60,7 +60,7 @@ if (urldecode($_REQUEST["fltr"]) != "")
 
 #file signature filter section:
 $match=0;
-if (urldecode($_REQUEST["sfltr"]) != "")
+if (isset($_REQUEST["sfltr"]))
 	{
 	$fltrmode = urldecode($_REQUEST["sfltr"]);
 	if ($fltrmode == "1" && (urldecode($_REQUEST["cntntyp"]) != ""))
@@ -149,27 +149,27 @@ if (urldecode($_REQUEST["sfltr"]) != "")
 		}
 	}
 
-if (urldecode($_REQUEST["cntntyp"]) != ""){
+if (isset($_REQUEST["cntntyp"])){
 $header = 'Content-Type: ' . urldecode($_REQUEST["cntntyp"]);
 header($header);
 }
 
-if (urldecode($_REQUEST["cntntdsp"]) != ""){
+if (isset($_REQUEST["cntntdsp"])){
 $header2 = 'Content-Disposition: ' . urldecode($_REQUEST["cntntdsp"]);
 header($header2);
 }
 
-if (urldecode($_REQUEST["nosnf"]) != ""){
+if (isset($_REQUEST["nosnf"])){
 $header3 = urldecode($_REQUEST["nosnf"]);
 header($header3);
 }
 
-if (urldecode($_REQUEST["noopn"]) != ""){
+if (isset($_REQUEST["noopn"])){
 $header4 = urldecode($_REQUEST["noopn"]);
 header($header4);
 }
 
-if (urldecode($_REQUEST["fileSig"]) != "")
+if (isset($_REQUEST["fileSig"]))
 {
 $signature = urldecode($_REQUEST["fileSig"]);
 if (strpos($signature,'GIF')!== false)
